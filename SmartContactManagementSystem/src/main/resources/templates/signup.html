@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+
+                <div class="my-card mt-3">
+
+                    <div th:if="${session.message}" th:classappend="${session.message.type}"
+                            class="alert alert-primary" role="alert">
+                        <p th:text="${session.message.content}">
+                            <th:block th:text="${session.removeAttribute(message)}">
+
+                            </th:block>
+
+                        </p>
+                    </div>
+
+                    <div class="container text-center">
+
+                        <img style="width:100px ; height:100px;" src="" th:src="@{/img/signup.png}" alt=""/>
+                    </div>
+
+                    <h1 class ="text-center">
+                        Register here !
+                    </h1>
+
+                    <form  action=""
+                           th:action="@{/do_register}"
+                           method="post"
+                           th:object="${user}"
+                           enctype="multipart/form-data"
+                    >
+
+                        <div class="mb-3">
+                            <label for="name_field"
+                                   class="form-control">Your Name</label>
+                            <input
+                                    name="userName"
+                                    type="text"
+                                    class="form-control is-invalid"
+                                    th:classappend="${#fields.hasErrors('userName') ? 'is-invalid':''}"
+                                   id="name_field"
+                                   aria-describedby="emailHelp"
+                            placeholder="Enter here"
+                                   required
+                                   th:value="${user.userName}"
+                            />
+                            <div class="invalid-feedback" th:each="e:${#fields.errors('userName')}" th:text="${e}">
+                                Please provide a valid name.
+                            </div>
+
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email_field"
+                                   class="form-label">Your Email</label>
+                            <input
+                                    name="userEmail"
+                                    type="email" class="form-control"
+                                   id="email_field" aria-describedby="emailHelp"
+                                   placeholder="Enter here"
+                                   required
+                                   th:value="${user.userEmail}"
+                            />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="password_field"
+                                   class="form-label">Your Password</label>
+                            <input
+                                    name="userPassword"
+                                    type="password" class="form-control"
+                                   id="password_field" aria-describedby="emailHelp"
+                                   placeholder="Enter here"
+                                   required
+
+                            />
+                        </div>
+
+                        <div class="form-group">
+
+                            <textarea
+                                    name="aboutUser"
+                                    th:value="${user.aboutUser}" placeholder="Enter something about Yourself" rows="10" class="form-control"></textarea>
+
+                        </div>
+
+
+
+                        <div class="custom-file mt-3">
+                            <label for="formGroupExampleInput">Upload Image</label>
+
+                            <input type="file" name="profileImage" />  </div>
+
+
+
+
+
+                        <div class="form-group form-check">
+
+                            <input type="checkbox"
+                            name="agreement"
+                            class="form-check-input"
+                            id="agreement"
+                            />
+
+                            <label for="agreement">Accept terms and condition</label>
+
+                        </div>
+
+                        <div class="container text-center">
+                            <button type="submit" class="btn btn-primary btn-block">
+                                submit
+                            </button>
+
+                            <button type="reset" class="btn btn-warning btn-block">
+                                Reset
+                            </button>
+
+                        </div>
+
+
+
+
+
+                    </form>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

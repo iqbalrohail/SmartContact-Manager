@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<section >
+    <div class="container-fluid home-main">
+        <h2>Smart Contact Manager <span class="blinker">.</span></h2>
+        <button type="submit" class="btn btn-default" ><a class="nav-link" th:href="@{/signup}" href="#">Start</a>
+        </button>
+    </div>
+<div class="container-fluid home-content1">
+        <div class="row">
+            <div class="col-md-6 content1-left">
+                <h3>Why to use our application <span class="blinker">?</span></h3>
+                <p>As we know that internet has made this world a global village and now a days
+                    it is quite easy to communicate with each other by using ones phone number ,
+                    Email or other social networking sites. But what would happen if you don’t
+                    have the information or somehow your Contact LIst including Email, Phone
+                    number of the one you want to communicate would have been lost?</p>
+             <div class="content1-left"></div>
+            </div>
+            <div class="col-md-6 content1-right">
+                <p>
+                    The main purpose of this application is to keep the track of your contacts
+                    so, You don't have to worry about loosing them!
+
+                </p>
+        </div>
+    </div>
+    <div class="container-fluid home-content2">
+        <p><span>Designed by </span> Rohail Iqbal </p>
+    </div>
+</section>
+</body>
+</html>

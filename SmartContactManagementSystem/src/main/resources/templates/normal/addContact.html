@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::layout(~{::section})">
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+<section>
+    <!-- Page Content -->
+    <div class="w3-container">
+        <div class="card">
+            <div class="card-body">
+
+
+
+                <h1 class="text-center">Add Contacts</h1>
+
+                <div class="container-fluid mt-1">
+                    <div class="row">
+
+                        <div class="col-md-8 offset-md-2">
+
+                            <form action=""
+                            th:object="${contact}"
+                                  enctype="multipart/form-data"
+                                  method="POST"
+                                  th:action="@{/user/process-contact}"
+                                  class="mt-2">
+
+                                <div class="form-group">
+                                    <label for="formGroupExampleInput">Name</label>
+                                    <input required type="text" class="form-control" name="contactName" id="formGroupExampleInput" placeholder="Enter name here">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="formGroupExampleInput">Nick Name</label>
+                                    <input required type="text" class="form-control" name="contactNickName" id="contactNickName" placeholder="Enter nick name here">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="formGroupExampleInput">Phone Number</label>
+                                    <input required min="10" type="number" class="form-control" name="contactPhone" id="contactPhone" placeholder="Enter phone number">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="formGroupExampleInput">Email</label>
+                                    <input required type="text" class="form-control" name="contactEmail" id="contactEmail" placeholder="Enter Email">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="formGroupExampleInput">work</label>
+                                    <input required type="text" class="form-control" name="contactWork" id="contactWork" placeholder="Enter contact's work/profession">
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="formGroupExampleInput">description</label>
+
+                            <textarea
+                                    name="contactDescription" id="mytextarea"
+                                     placeholder="Enter something about the contact" rows="10" class="form-control"></textarea>
+
+                                </div>
+
+                                <div class="custom-file">
+                                    <label for="formGroupExampleInput">Upload Image</label>
+
+                                    <input type="file" name="profileImage" />
+
+
+
+
+                                <div class="container text-center">
+                                    <button type="submit" class="btn btn-primary btn-block">
+                                        Add contact
+                                    </button>
+
+                                    <button type="reset" class="btn btn-warning btn-block">
+                                        Reset
+                                    </button>
+
+                                </div>
+
+
+
+
+
+
+                            </form>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+      tinymce.init({
+        selector: '#mytextarea'
+      });
+    </script>
+
+</section>
+</body>
+</html>

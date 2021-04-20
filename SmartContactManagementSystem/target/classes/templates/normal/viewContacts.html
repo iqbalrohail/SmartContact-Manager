@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::layout(~{::section})">
+<head>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!------ Include the above in your HEAD tag ---------->
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+
+<section>
+  <!-- Page Content -->
+
+  <div class="w3-container">
+    <h1 class="text-center">view contacts</h1>
+
+    <div class="container mt-3">
+
+      <div class="search-container h-100">
+        <div class="d-flex justify-content-center h-100">
+          <div class="searchbar">
+            <input id="search_input" onkeyup="search()" class="form-control btn-block" type="text" name="" placeholder="Search your contacts...">
+            <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+
+            <div class="search-result mt-3 btn-block text-center">
+
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div >
+
+      <table class="table mt-5">
+        <thead>
+        <tr>
+          <th scope="col">#ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Phone</th>
+          <th scope="col">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="c : ${contact}">
+          <th scope="row" th:text="${c.contactId}">1</th>
+          <td >
+            <img src="" class="MyProfilePicture" th:src="@{'/img/'+${c.contactImageUrl}}" alt=""/>
+          <span th:text="${c.contactName}"></span>
+          </td>
+          <td >
+            <a href="" th:href="@{'/user/contact-detail/'+${c.contactId}}">
+              <span th:text="${c.contactEmail}"></span>
+            </a>
+          </td>
+          <td th:text="${c.contactPhone}"></td>
+
+          <td >
+            <button type="button"
+
+               th:onclick="|deleteContact(${c.contactId} )|"    class="btn btn-danger" >Delete
+
+            </button>
+
+            <form method="post" th:action="@{'/user/update/'+${c.contactId}}">
+
+              <button  type="submit" class="btn btn-info">Update</button>
+
+            </form>
+
+
+
+          </td>
+
+
+        </tr>
+
+        </tbody>
+      </table>
+
+    </div>
+
+
+  </div>
+
+
+
+
+</section>
+</body>
+</html>

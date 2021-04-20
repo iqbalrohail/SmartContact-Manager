@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::layout(~{::section})">
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+<section>
+    <!-- Page Content -->
+
+    <div class="cotn_principal text-center">
+        <div class="cont_centrar text-center">
+
+            <div class="cont_login text-center" >
+                <div class="cont_info_log_sign_up text-center">
+                    <div class="col_md_login text-center">
+                        <div class="cont_ba_opcitiy text-center">
+
+                            <div class="text-center">
+                                <img style="width:200px ; height:200px;" src="" class="MyProfilePicture" th:src="@{'/img/'+${user.userImageUrl}}" alt=""/>
+                            </div>
+
+                            <h2>Start Adding your contacts here !</h2>
+                            <p>
+                                hey!
+                                <span th:text="${user.userName}">
+
+                                </span>
+                            </p>
+                            <button class="btn_login" type="submit" >
+                                <a class="nav-link" th:href="@{/user/add-contact}" href="#">click here</a>
+                                </button>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+                <div class="cont_back_info">
+                    <div class="cont_img_back_grey">
+                        <img src="https://images.unsplash.com/42/U7Fc1sy5SCUDIu4tlJY3_NY_by_PhilippHenzler_philmotion.de.jpg?ixlib=rb-0.3.5&q=50&fm=jpg&crop=entropy&s=7686972873678f32efaf2cd79671673d" alt="" />
+                    </div>
+
+                </div>
+                <div class="cont_forms" >
+                    <div class="cont_img_back_">
+                        <img src="https://images.unsplash.com/42/U7Fc1sy5SCUDIu4tlJY3_NY_by_PhilippHenzler_philmotion.de.jpg?ixlib=rb-0.3.5&q=50&fm=jpg&crop=entropy&s=7686972873678f32efaf2cd79671673d" alt="" />
+                    </div>
+
+
+
+
+
+
+
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+</section>
+</body>
+</html>
