@@ -1,5 +1,7 @@
 Following are the tools required to run this application in your local machine
 
+These readme instructions are as per the Linux OS. You can install the same in Windows/MacOS by following the required utilities on internet.
+
 # 1 Install intelliJ idea
 
 sudo snap install intellij-idea-community --classic
